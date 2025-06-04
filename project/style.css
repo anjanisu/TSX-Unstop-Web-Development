@@ -1,0 +1,290 @@
+/* General Styling */
+body {
+    padding-top: 90px; /* Increased padding to account for taller navbar */
+    font-family: 'Inter', sans-serif; /* Sleek, modern font */
+    background-color: #f8fafc; /* Soft white background */
+    color: #1e3a8a; /* Deep blue text */
+}
+
+/* Hero Section */
+#hero {
+    min-height: 100vh; /* Ensure full viewport height */
+    background: linear-gradient(135deg, #1e3a8a, #f97316); /* Deep blue to vibrant orange gradient */
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0; /* Added padding to prevent content clipping */
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.25), transparent); /* Softer radial glow */
+    opacity: 0.2;
+}
+
+#hero .container {
+    max-width: 800px; /* Constrain content width for readability */
+    text-align: center;
+    padding: 2rem;
+    z-index: 1; /* Ensure content is above background overlay */
+}
+
+#hero h1 {
+    font-size: 4rem; /* Larger heading for emphasis */
+    font-weight: 800;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow for readability */
+    animation: slideInDown 1.2s ease-out;
+    margin-bottom: 1.5rem;
+}
+
+#hero p {
+    font-size: 1.4rem; /* Slightly larger for clarity */
+    line-height: 1.6; /* Improved readability */
+    max-width: 700px; /* Constrain paragraph width */
+    margin: 0 auto 2rem; /* Center and space */
+    animation: slideInUp 1.2s ease-out 0.3s;
+}
+
+/* Section Styling */
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+h2 {
+    color: #1e3a8a; /* Deep blue */
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 3.5rem;
+    text-align: center;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(to right, #f97316, #1e3a8a); /* Orange to blue gradient */
+    border-radius: 3px;
+    animation: pulse 2s infinite;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: #1e3a8a !important; /* Deep blue navbar */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    color: #f97316 !important; /* Orange brand name */
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #f97316 !important; /* Orange on hover */
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: #f97316; /* Orange underline */
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    min-height: 200px; /* Uniform minimum height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    color: #1e3a8a; /* Deep blue */
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: #4b5563; /* Medium gray */
+    font-size: 1rem;
+    flex-grow: 1;
+}
+
+.btn-primary {
+    background: #f97316; /* Orange button */
+    border: none;
+    border-radius: 50px;
+    padding: 0.6rem 1.8rem;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #1e3a8a; /* Blue on hover */
+    transform: scale(1.1);
+}
+
+/* Projects and Skills Section */
+#projects .card,
+#skills .card {
+    height: 250px; /* Fixed height for uniformity */
+}
+
+/* Contact Section */
+#contact .card {
+    background: linear-gradient(135deg, #1e3a8a, #f97316); /* Blue to orange gradient */
+    color: #fff;
+    height: 300px; /* Slightly taller for contact card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact .card-title {
+    color: #fff;
+}
+
+#contact .card-text a {
+    color: #f8fafc; /* Soft white links */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#contact .card-text a:hover {
+    color: #f97316; /* Orange on hover */
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #1e3a8a !important; /* Deep blue footer */
+    color: #f8fafc;
+    padding: 2rem 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Reduced padding for mobile */
+    }
+
+    #hero {
+        padding: 1rem 0;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem; /* Smaller heading on mobile */
+    }
+
+    #hero p {
+        font-size: 1.1rem; /* Smaller paragraph on mobile */
+        max-width: 90%;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    #projects .card,
+    #skills .card {
+        height: auto; /* Flexible height on mobile */
+        min-height: 200px;
+    }
+
+    #contact .card {
+        height: auto;
+        padding: 1.5rem;
+    }
+}
